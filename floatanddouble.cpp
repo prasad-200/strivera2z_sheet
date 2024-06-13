@@ -10,10 +10,10 @@ int main() {
  }
 else{
   if(age>=55 && age<=57){
-    cout<<"retirement aagi hai";
+    cout<<"retirement baaki hai";
   }
   else if(age>=18){
-    cout<<""
+    cout<<"eliigible for job";
   }
 }
   return 0;
