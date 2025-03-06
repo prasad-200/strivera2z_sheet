@@ -17,3 +17,4 @@ int main(){
     cout<<res<<" "<<c;
     return 0;
 }
+c=(int)(log10(n)+1);//optimal approch
