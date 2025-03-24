@@ -13,6 +13,7 @@ int main(){
   int n;
   cout<<"Enter the number upto which you want fibo series:"<<endl;
   cin>>n;
-   func(n);
+   int s=func(n);
+   cout<<s;
     return 0;
 }

@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++>
 using namespace std;
 
 int main(){
@@ -14,7 +14,6 @@ int main(){
     }
    cout<<"frequencies are:"<<endl;
    for(auto it:mp){
-      cout<<it.first<<" -> "<<it.second<<endl;
+      cout<it.first<<" -> "
    }
-   return 0;
 }
