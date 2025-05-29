@@ -1,0 +1,18 @@
+
+brute force -tc(n) sc-(n)
+take a dummy array and shift the elements but it increses the space complexity
+
+my approch tc(optimal)-o(n)
+space complexity-o(1)
+class Solution {
+public:
+    void rotateArrayByOne(vector<int>& nums) {
+         int temp=nums[0];
+         int i;
+         for(i=0;i<nums.size()-1;i++){
+            nums[i]=nums[i+1];
+         }
+         nums[i]=temp;
+    }
+};
+
