@@ -1,0 +1,63 @@
+brute force 
+tc-o(n);
+
+pair<int, int> getFloorAndCeil(vector<int> &a, int n, int x) {
+	// Write your code here.
+	pair<int,int>ans;
+    int i;
+	int ceil=-1;
+	int floor=-1;
+	for(int i=0;i<n;i++){
+		if(a[i]==x){
+			ans.first=a[i];
+			ans.second=a[i];
+			return ans;
+		}
+		else if(a[i]<x){
+			floor=a[i];
+		}
+        else if(a[i]>x){
+			ceil=a[i];
+			break;
+		}
+	}
+    ans.first=floor;
+	ans.second=ceil;
+	return ans;
+}
+
+my solution(optimal 1)
+tc-log(n);
+pair<int, int> getFloorAndCeil(vector<int> &a, int n, int x) {
+	// Write your code here.
+	pair<int,int>ans;
+	int low=0;
+	int high=n-1;
+	while(low<=high){
+		int mid=(low+high)/2;
+		if(a[mid]==x){
+			ans.first=a[mid];
+			ans.second=a[mid];
+			return ans;
+		}
+		else if(a[mid]>x){
+			high=mid-1;
+		}
+		else{
+			low=mid+1;
+		}
+	}
+    if(low==n){
+		ans.first=a[high];
+		ans.second=-1;
+		return ans;
+	}
+	if(low==0){
+		ans.first=-1;
+		ans.second=a[low];
+		return ans;
+	}
+    ans.first=a[high];
+	ans.second=a[low];
+	return ans;
+}
