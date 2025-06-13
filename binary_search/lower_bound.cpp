@@ -37,7 +37,7 @@ int lowerBound(vector<int> arr, int n, int x) {
 return ans;
 }
 
-using cpp stl
+using cpp
 int lowerBound(vector<int> arr, int n, int x) {
 	// Write your code here
 	//  Format: N = 5, arr[] = {3,5,8,15,19}, x = 9

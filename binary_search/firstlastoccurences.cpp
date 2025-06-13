@@ -27,7 +27,7 @@ public:
     }
 };
 
-//optimal  tc-o(log(n)
+//optimal 1 tc-o(log(n)
 
 class Solution {
 public:
@@ -45,5 +45,56 @@ public:
             ans.push_back(-1);
             return ans;
         }
+    }
+};
+
+//optimal 2 tc-o(2log(n) (with proper algo)
+//sc-o(1)
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        vector<int>ans;
+       int n=nums.size();
+       int firstocc=-1;
+       int secondocc=-1;
+
+       //finding the first occurence in array
+      int low=0;
+      int high=n-1;
+      while(low<=high){
+        int mid=(low+high)/2;
+        if(nums[mid]==target){
+            firstocc=mid;
+            high=mid-1;
+        }
+        else if(nums[mid]>target){
+            high=mid-1;
+        }
+        else{
+            low=mid+1;
+        }
+      }
+
+ // second occurence
+      if(firstocc!=-1){
+      int low=0;
+      int high=n-1;
+      while(low<=high){
+        int mid=(low+high)/2;
+        if(nums[mid]==target){
+            secondocc=mid;
+           low=mid+1;
+        }
+        else if(nums[mid]>target){
+            high=mid-1;
+        }
+        else{
+            low=mid+1;
+        }
+      }
+      }
+      ans.push_back(firstocc);
+      ans.push_back(secondocc);
+      return ans;
     }
 };
